@@ -2,7 +2,7 @@
 
 The current DEADWIRE renderer revision passed all **3 Playwright browser tests in 43.6 seconds with forced SwiftShader software rendering and Low graphics**. The interface viewport was 1280 × 800, with an additional 900 × 700 layout check. The tests used real UI clicks, keyboard movement, and mouse fire. The `window.__deadwire` snapshots were read only. No test directly wrote game state or browser storage, seeded the RNG, teleported an actor, or altered the game clock.
 
-The original local graphics run passed in 2.6 minutes, but the first GitHub CI run timed out all three cases under software rendering. This exposed a renderer portability problem. The revised run exercises a real user graphics setting; gameplay assertions and timeouts are unchanged. Remote CI verification of this revision is pending.
+The original local graphics run passed in 2.6 minutes, but the first GitHub CI run timed out all three cases under software rendering. This exposed a renderer portability problem. The revised run exercises a real user graphics setting; gameplay assertions and timeouts are unchanged. [GitHub CI passed for renderer revision `5d95961`](https://github.com/ErikBurdett/deadwire/actions/runs/34095896308), including the same browser suite with forced software rendering.
 
 The test server uses dedicated port **5187**, `--strictPort`, and `reuseExistingServer: false`. This prevents accidentally testing another project already running on a common development port. An earlier attempt reached Theandril on 5173 and is excluded from these results.
 

@@ -66,7 +66,7 @@ SwiftShader run of the same three browser cases passed in 43.6 seconds using Low
 selected through the user interface. The 1280 × 800 interface retained a verified 640 × 400
 game drawing buffer, with all 30 soldiers and 57 loot caches present. Gameplay assertions
 and timeouts were unchanged. The current screenshots and exact scope are in `docs/qa/README.md`;
-remote CI verification of this renderer revision is pending.
+[GitHub CI passed for this renderer revision](https://github.com/ErikBurdett/deadwire/actions/runs/34095896308).
 
 ### Save schema
 

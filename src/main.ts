@@ -1,10 +1,18 @@
 import './style.css';
 import { Game, buyPrice, sellPrice } from './sim';
 import { ITEMS, NOTES, UPGRADES, type ModSlot } from './content';
-import { GameScene, STATIONS } from './scene';
+import { GameScene, STATIONS, type GraphicsQuality } from './scene';
 import { FieldAudio } from './audio';
 import * as T from 'three';
 const SAVE_KEY = 'deadwire.save.v1';
+const GRAPHICS_KEY = 'deadwire.graphics.v1';
+let graphicsPreference: GraphicsQuality = 'auto';
+try {
+  const saved = localStorage.getItem(GRAPHICS_KEY);
+  if (saved === 'auto' || saved === 'low' || saved === 'high') graphicsPreference = saved;
+} catch {
+  /* Graphics remain usable when browser storage is unavailable. */
+}
 const app = document.querySelector<HTMLDivElement>('#app')!;
 app.innerHTML = `<canvas id="world" aria-label="DEADWIRE 3D game world"></canvas><div class="vignette"></div><div id="loading"><div class="wordmark">DEAD<span>WIRE</span><i> / </i></div><p id="loading-text">Establishing connection…</p><div class="loading-line"></div></div><div id="menu"></div><div id="hud"></div><div id="toast" role="status"></div><div id="damage"></div>`;
 const canvas = document.querySelector<HTMLCanvasElement>('#world')!,
@@ -199,7 +207,8 @@ function renderRaidMenu() {
   menuEl.innerHTML = `${header()}<main class="raid-menu"><div class="raid-tabs"><button data-tab="pause" class="${tab === 'pause' ? 'active' : ''}">Operation</button><button data-tab="map" class="${tab === 'map' ? 'active' : ''}">Tactical map</button><button data-tab="inventory" class="${tab === 'inventory' ? 'active' : ''}">Backpack</button><button data-tab="settings" class="${tab === 'settings' ? 'active' : ''}">Settings</button>${button('Resume operation →', 'resume', 'outline')}</div><div class="raid-body">${body}</div><div class="pause-label">LOCAL SOLO OPERATION PAUSED · PROGRESS SAVED</div></main>`;
 }
 function settingsHTML() {
-  return `<h2>Field controls</h2><div class="controls-grid">${[
+  const graphics = view.graphics;
+  return `<h2>Field settings</h2><label class="setting">Graphics quality <select id="graphics-quality" aria-label="Graphics quality">${(['auto', 'low', 'high'] as const).map((quality) => `<option value="${quality}" ${graphics.quality === quality ? 'selected' : ''}>${quality === 'auto' ? 'Auto' : quality === 'low' ? 'Low' : 'High'}</option>`).join('')}</select></label><p class="subtle" id="graphics-detail">${graphics.effectiveQuality === 'low' ? 'Low' : 'High'} · ${graphics.renderWidth} × ${graphics.renderHeight} game resolution. Low reduces resolution and lighting cost; the interface stays sharp. Auto selects Low for detected software rendering. All gameplay, soldiers and loot remain active.</p><h2>Field controls</h2><div class="controls-grid">${[
     ['W A S D', 'Move'],
     ['MOUSE', 'Look'],
     ['LMB / RMB', 'Fire / aim'],
@@ -326,6 +335,16 @@ menuEl.addEventListener('change', (e) => {
   }
   if (target.id === 'volume') audio.volume = Number(target.value);
   if (target.id === 'sensitivity') sensitivity = Number(target.value);
+  if (target.id === 'graphics-quality' && ['auto', 'low', 'high'].includes(target.value)) {
+    graphicsPreference = target.value as GraphicsQuality;
+    view.setGraphicsQuality(graphicsPreference);
+    try {
+      localStorage.setItem(GRAPHICS_KEY, graphicsPreference);
+    } catch {
+      toast('Graphics applied for this session; browser storage is unavailable.');
+    }
+    renderMenu();
+  }
 });
 canvas.addEventListener('click', () => {
   if (loaded && !menu && document.pointerLockElement !== canvas) void play();
@@ -433,6 +452,7 @@ Object.defineProperty(window, '__deadwire', {
       drawCalls: view?.drawCalls,
       triangles: view?.triangles,
     },
+    graphics: view?.graphics,
     ready: loaded,
   }),
 });
@@ -441,7 +461,7 @@ hud.addEventListener('click', (e) => {
 });
 async function boot() {
   try {
-    view = new GameScene(canvas);
+    view = new GameScene(canvas, graphicsPreference);
     await view.load((s) => {
       document.querySelector('#loading-text')!.textContent = s;
     });
@@ -456,7 +476,8 @@ async function boot() {
     let last = performance.now();
     function frame(now: number) {
       requestAnimationFrame(frame);
-      const dt = Math.min((now - last) / 1000, 0.08);
+      const wallDt = Math.max(0, (now - last) / 1000),
+        dt = Math.min(wallDt, 0.08);
       last = now;
       let moving = false;
       if (!menu && (game.state.mode === 'raid' || game.state.mode === 'hideout')) {
@@ -534,7 +555,7 @@ async function boot() {
         if (['dead', 'extracted'].includes(lastMode)) openMenu('result');
         save();
       }
-      view.render(game, dt, menu, tab, ads, moving);
+      view.render(game, dt, menu, tab, ads, moving, wallDt);
       if (now - lastHUD > 100) {
         if (!menu) updateHUD();
         lastHUD = now;

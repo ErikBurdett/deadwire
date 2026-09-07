@@ -19,6 +19,8 @@ const ASSETS = [
   'backpack',
   'generator',
 ];
+export type GraphicsQuality = 'auto' | 'low' | 'high';
+type LocalLight = { position: T.Vector3; color: number; intensity: number; distance: number };
 export const STATIONS = [
   { id: 'loadout', label: 'Equipment lockers', x: -7, z: -2 },
   { id: 'weapons', label: 'Weapon workbench', x: 0, z: -5 },
@@ -30,6 +32,7 @@ export class GameScene {
   renderer: T.WebGLRenderer;
   scene = new T.Scene();
   camera = new T.PerspectiveCamera(72, 1, 0.04, 700);
+  private weaponCamera = new T.PerspectiveCamera(72, 1, 0.01, 10);
   env = new T.Group();
   dynamic = new T.Group();
   weaponRoot = new T.Group();
@@ -50,6 +53,13 @@ export class GameScene {
   private flash: T.Mesh;
   private envObjects: { obj: T.Object3D; x: number; z: number }[] = [];
   private groundTex: T.CanvasTexture;
+  private environmentTexture: T.Texture | null = null;
+  private localLights: LocalLight[] = [];
+  private lightSlots = Array.from({ length: 3 }, () => new T.PointLight(0xffffff, 0, 14, 2));
+  private quality: GraphicsQuality = 'auto';
+  private effectiveQuality: 'low' | 'high' = 'high';
+  private rendererName = '';
+  private softwareRenderer = false;
   fps = 0;
   frameMs = 0;
   drawCalls = 0;
@@ -57,26 +67,25 @@ export class GameScene {
   private frameAccum = 0;
   private frames = 0;
   private time = 0;
-  constructor(canvas: HTMLCanvasElement) {
+  constructor(canvas: HTMLCanvasElement, quality: GraphicsQuality = 'auto') {
     this.renderer = new T.WebGLRenderer({
       canvas,
-      antialias: true,
+      antialias: false,
       powerPreference: 'high-performance',
     });
-    this.renderer.setPixelRatio(Math.min(devicePixelRatio, 1.6));
-    this.renderer.setSize(innerWidth, innerHeight);
-    this.renderer.shadowMap.enabled = true;
+    const gl = this.renderer.getContext(),
+      debug = gl.getExtension('WEBGL_debug_renderer_info');
+    this.rendererName = String(gl.getParameter(debug?.UNMASKED_RENDERER_WEBGL ?? gl.RENDERER));
+    this.softwareRenderer = /swiftshader|llvmpipe|softpipe|software|lavapipe/i.test(
+      this.rendererName,
+    );
+    this.renderer.info.autoReset = false;
     this.renderer.shadowMap.type = T.PCFSoftShadowMap;
     this.renderer.outputColorSpace = T.SRGBColorSpace;
     this.renderer.toneMapping = T.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.05;
-    const pmrem = new T.PMREMGenerator(this.renderer),
-      room = new RoomEnvironment();
-    this.scene.environment = pmrem.fromScene(room, 0.04).texture;
     this.scene.environmentIntensity = 0.3;
-    room.dispose();
-    pmrem.dispose();
-    this.scene.add(this.env, this.dynamic, this.light, this.target);
+    this.scene.add(this.env, this.dynamic, this.light, this.target, ...this.lightSlots);
     this.light.target = this.target;
     this.light.castShadow = true;
     Object.assign(this.light.shadow.camera, {
@@ -109,11 +118,76 @@ export class GameScene {
     this.flash.visible = false;
     this.weaponRoot.add(this.flash);
     this.groundTex = this.texture('ground');
+    this.setGraphicsQuality(quality);
     addEventListener('resize', () => {
       this.camera.aspect = innerWidth / innerHeight;
       this.camera.updateProjectionMatrix();
-      this.renderer.setSize(innerWidth, innerHeight);
+      this.resize();
     });
+  }
+  private resize() {
+    // The HUD remains at CSS resolution. Bound raster work even on a large display.
+    const ratio =
+      this.effectiveQuality === 'low'
+        ? Math.min(0.5, 640 / innerWidth, 400 / innerHeight)
+        : Math.min(devicePixelRatio, 1.6);
+    this.renderer.setPixelRatio(ratio);
+    this.renderer.setSize(innerWidth, innerHeight);
+  }
+  setGraphicsQuality(quality: GraphicsQuality) {
+    this.quality = quality;
+    this.effectiveQuality = quality === 'auto' ? (this.softwareRenderer ? 'low' : 'high') : quality;
+    const high = this.effectiveQuality === 'high';
+    this.renderer.shadowMap.enabled = high;
+    this.light.castShadow = high;
+    for (const slot of this.lightSlots) slot.visible = high;
+    if (high && !this.environmentTexture) {
+      const pmrem = new T.PMREMGenerator(this.renderer),
+        room = new RoomEnvironment();
+      this.environmentTexture = pmrem.fromScene(room, 0.04).texture;
+      room.dispose();
+      pmrem.dispose();
+    }
+    this.scene.environment = high ? this.environmentTexture : null;
+    this.groundTex.anisotropy = high ? 4 : 1;
+    this.resize();
+  }
+  get graphics() {
+    return {
+      quality: this.quality,
+      effectiveQuality: this.effectiveQuality,
+      softwareRenderer: this.softwareRenderer,
+      renderer: this.rendererName,
+      renderWidth: this.renderer.domElement.width,
+      renderHeight: this.renderer.domElement.height,
+      shadows: this.renderer.shadowMap.enabled,
+      pointLightSlots: this.effectiveQuality === 'high' ? this.lightSlots.length : 0,
+      environmentLighting: !!this.scene.environment,
+    };
+  }
+  private updateLocalLights() {
+    if (this.effectiveQuality === 'low') return;
+    const near = this.localLights
+      .filter(
+        (source) =>
+          source.position.distanceToSquared(this.camera.position) < (source.distance + 6) ** 2,
+      )
+      .sort(
+        (a, b) =>
+          a.position.distanceToSquared(this.camera.position) -
+          b.position.distanceToSquared(this.camera.position),
+      );
+    // Keep exactly three visible light slots: movement changes uniforms, not shader variants.
+    for (let i = 0; i < this.lightSlots.length; i++) {
+      const slot = this.lightSlots[i]!,
+        source = near[i];
+      slot.intensity = source?.intensity ?? 0;
+      if (source) {
+        slot.position.copy(source.position);
+        slot.color.setHex(source.color);
+        slot.distance = source.distance;
+      }
+    }
   }
   async load(progress: (s: string) => void) {
     const loader = new GLTFLoader();
@@ -256,6 +330,7 @@ export class GameScene {
     this.enemies.clear();
     this.loot.clear();
     this.envObjects = [];
+    this.localLights = [];
     this.tracers.forEach((t) => {
       t.line.geometry.dispose();
       (t.line.material as T.Material).dispose();
@@ -354,9 +429,12 @@ export class GameScene {
       [5, 0, 0xabc8c0],
       [-7, 5, 0xcc9e6d],
     ]) {
-      const l = new T.PointLight(color, 45, 14, 2);
-      l.position.set(x, 4.5, z);
-      this.env.add(l);
+      this.localLights.push({
+        position: new T.Vector3(x, 4.5, z),
+        color,
+        intensity: 45,
+        distance: 14,
+      });
       this.shape(
         new T.BoxGeometry(1.7, 0.06, 0.2),
         x,
@@ -427,9 +505,12 @@ export class GameScene {
       );
       this.asset('workbench', b.x + b.w / 2 - 3, 0, b.z - b.d / 2 + 2, Math.PI, 1.5);
       this.asset('locker', b.x - b.w / 2 + 1, 0, b.z - b.d / 2 + 1, 0, 1.4);
-      const lamp = new T.PointLight(0xffd194, 11, 13, 2);
-      lamp.position.set(b.x, 3.5, b.z);
-      this.env.add(lamp);
+      this.localLights.push({
+        position: new T.Vector3(b.x, 3.5, b.z),
+        color: 0xffd194,
+        intensity: 11,
+        distance: 13,
+      });
     }
     for (const p of w.props) {
       if (p.asset === 'antenna') {
@@ -635,7 +716,15 @@ export class GameScene {
       if (e.kind === 'shot') this.recoil = 0.08;
     }
   }
-  render(game: Game, dt: number, menu: boolean, tab: string, ads: boolean, moving: boolean) {
+  render(
+    game: Game,
+    dt: number,
+    menu: boolean,
+    tab: string,
+    ads: boolean,
+    moving: boolean,
+    wallDt: number,
+  ) {
     const start = performance.now();
     this.time += dt;
     const raid =
@@ -725,10 +814,10 @@ export class GameScene {
         this.tracers.splice(i, 1);
       }
     }
+    this.updateLocalLights();
+    this.renderer.info.reset();
     this.renderer.autoClear = true;
     this.renderer.render(this.scene, this.camera);
-    this.drawCalls = this.renderer.info.render.calls;
-    this.triangles = this.renderer.info.render.triangles;
     if (!menu && game.state.mode === 'raid') {
       this.attachments(game);
       this.recoil *= Math.exp(-dt * 17);
@@ -740,12 +829,16 @@ export class GameScene {
       this.weaponRoot.rotation.x = p.reloadRemaining ? -0.3 * Math.sin(p.reloadRemaining * 2) : 0;
       this.weaponRoot.position.y += moving ? Math.cos(this.walk) * 0.008 : 0;
       this.flash.visible = this.recoil > 0.035;
-      const viewCam = new T.PerspectiveCamera(this.camera.fov, this.camera.aspect, 0.01, 10);
+      this.weaponCamera.fov = this.camera.fov;
+      this.weaponCamera.aspect = this.camera.aspect;
+      this.weaponCamera.updateProjectionMatrix();
       this.renderer.autoClear = false;
       this.renderer.clearDepth();
-      this.renderer.render(this.weaponScene, viewCam);
+      this.renderer.render(this.weaponScene, this.weaponCamera);
     }
-    this.frameAccum += dt;
+    this.drawCalls = this.renderer.info.render.calls;
+    this.triangles = this.renderer.info.render.triangles;
+    this.frameAccum += wallDt;
     this.frames++;
     if (this.frameAccum > 0.5) {
       this.fps = Math.round(this.frames / this.frameAccum);

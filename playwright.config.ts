@@ -1,6 +1,8 @@
 import { defineConfig } from '@playwright/test';
 
-declare const process: { env: { PLAYWRIGHT_CHROMIUM_EXECUTABLE?: string } };
+declare const process: {
+  env: { PLAYWRIGHT_CHROMIUM_EXECUTABLE?: string; PLAYWRIGHT_SOFTWARE_RENDERER?: string };
+};
 
 export default defineConfig({
   testDir: './tests',
@@ -17,7 +19,14 @@ export default defineConfig({
     launchOptions: {
       executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE || undefined,
       chromiumSandbox: false,
-      args: ['--no-sandbox', '--disable-dev-shm-usage', '--enable-unsafe-swiftshader'],
+      args: [
+        '--no-sandbox',
+        '--disable-dev-shm-usage',
+        '--enable-unsafe-swiftshader',
+        ...(process.env.PLAYWRIGHT_SOFTWARE_RENDERER === '1'
+          ? ['--use-angle=swiftshader', '--use-gl=angle']
+          : []),
+      ],
     },
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',

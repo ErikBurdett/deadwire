@@ -7,6 +7,17 @@ type Snapshot = {
   profile: Profile;
   world: World;
   performance: Record<string, number>;
+  graphics: {
+    quality: 'auto' | 'low' | 'high';
+    effectiveQuality: 'low' | 'high';
+    softwareRenderer: boolean;
+    renderer: string;
+    renderWidth: number;
+    renderHeight: number;
+    shadows: boolean;
+    pointLightSlots: number;
+    environmentLighting: boolean;
+  };
 };
 const browserErrors = new WeakMap<Page, string[]>();
 
@@ -146,12 +157,43 @@ test.beforeEach(async ({ page, baseURL }) => {
   await page.goto('/');
   await page.waitForFunction(() => '__deadwire' in window);
   await expect(page.getByRole('button', { name: /Deploy to Blackwater/ })).toBeVisible();
+  const auto = (await snapshot(page)).graphics;
+  expect(auto.quality).toBe('auto');
+  expect(auto.effectiveQuality).toBe(auto.softwareRenderer ? 'low' : 'high');
+  await page.locator('[data-action="settings"]').click();
+  await page.getByLabel('Graphics quality', { exact: true }).selectOption('low');
+  const low = (await snapshot(page)).graphics;
+  expect(low).toMatchObject({
+    quality: 'low',
+    effectiveQuality: 'low',
+    shadows: false,
+    pointLightSlots: 0,
+    environmentLighting: false,
+  });
+  expect(low.renderWidth).toBe(640);
+  expect(low.renderHeight).toBe(400);
+  expect(
+    await page.locator('#world').evaluate((canvas) => ({
+      width: (canvas as HTMLCanvasElement).width,
+      height: (canvas as HTMLCanvasElement).height,
+    })),
+  ).toEqual({ width: 640, height: 400 });
+  await page.locator('nav [data-tab="home"]').click();
 });
 
 test.afterEach(async ({ page }, info) => {
   const errors = browserErrors.get(page) ?? [];
   await info.attach('browser-errors.json', {
     body: JSON.stringify(errors, null, 2),
+    contentType: 'application/json',
+  });
+  const observed = await snapshot(page);
+  await info.attach('graphics-observations.json', {
+    body: JSON.stringify(
+      { graphics: observed.graphics, performance: observed.performance },
+      null,
+      2,
+    ),
     contentType: 'application/json',
   });
   expect(
@@ -212,6 +254,7 @@ test('hideout equipment, weapon modifications, facilities and responsive menus p
   await page.reload();
   await expect(page.locator('[data-action="deploy"]')).toBeVisible();
   expect((await snapshot(page)).profile).toEqual(profile);
+  expect((await snapshot(page)).graphics.quality).toBe('low');
 });
 
 test('a real raid supports loot, combat controls, exact paused reload and edge extraction', async ({
@@ -282,6 +325,7 @@ test('a real raid supports loot, combat controls, exact paused reload and edge e
   const restored = await snapshot(page);
   expect(restored.state).toEqual(paused.state);
   expect(restored.profile).toEqual(paused.profile);
+  expect(restored.graphics.quality).toBe('low');
   await page.locator('[data-action="resume"]').click();
 
   const exit = restored.world.extractions.find((point) => point.id === 'south')!;

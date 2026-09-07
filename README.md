@@ -89,6 +89,10 @@ A production build is written to `dist/`; serve it with `npm run preview`.
 
 ## Blender art factory
 
+For shared workflows across games and machines, use the separate
+[Blender Art Factory](https://github.com/ErikBurdett/blender-art-factory). It includes
+this military pack, three Theandril art profiles, and eight portable workflow skills.
+
 Blender 5.2.1 is the tested authoring version. Python 3.10+ runs the factory CLI.
 `BLENDER_BIN` can point to a Blender installation if it is not on `PATH`.
 

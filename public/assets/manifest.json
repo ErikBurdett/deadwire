@@ -1,0 +1,807 @@
+{
+  "schemaVersion": 1,
+  "units": "meters",
+  "up": "+Y",
+  "forward": "-Z",
+  "assets": [
+    {
+      "id": "rifle",
+      "candidate": "assets/candidates/rifle.glb",
+      "source": "assets/source/rifle.blend",
+      "preview": "assets/previews/rifle.png",
+      "dimensions": {
+        "x": 0.118,
+        "y": 0.4186,
+        "z": 1.19
+      },
+      "triangles": 6796,
+      "meshCount": 8,
+      "materialCount": 5,
+      "nodes": [
+        "body",
+        "optic",
+        "suppressor"
+      ],
+      "sourceSha256": "f846c4648df0cdb0bfe3dd6a50fa708e3e67e71d172cb706d2998363c41f8c35",
+      "outputSha256": "ea3a84349288af0dd80fa695acb5c126760a729bb2afa02fdc98a8583757f157",
+      "previewSha256": "6b17ae0c10ae054dc379e9fd7a31abead79d59b8823d3020c50467cb9f92cda1",
+      "bytes": 382952,
+      "provenance": {
+        "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+        "license": "CC0-1.0",
+        "tool": "Blender",
+        "toolVersion": "5.2.1 LTS",
+        "seed": 40721,
+        "generator": "scripts/blender_assets.py",
+        "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+      },
+      "status": "published",
+      "technicalValidation": {
+        "passed": true,
+        "at": "2026-09-07T05:47:53.332794+00:00",
+        "triangles": 6796,
+        "triangleBudget": 10000,
+        "primitives": 8,
+        "errors": []
+      },
+      "visualReview": {
+        "assetId": "rifle",
+        "decision": "approve",
+        "reviewer": "Parent agent visual inspection",
+        "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+        "reviewedAt": "2026-09-07T05:47:53.287366+00:00",
+        "outputSha256": "ea3a84349288af0dd80fa695acb5c126760a729bb2afa02fdc98a8583757f157",
+        "sourceSha256": "f846c4648df0cdb0bfe3dd6a50fa708e3e67e71d172cb706d2998363c41f8c35",
+        "previewSha256": "6b17ae0c10ae054dc379e9fd7a31abead79d59b8823d3020c50467cb9f92cda1",
+        "preview": "assets/previews/rifle.png",
+        "technicalValidation": {
+          "passed": true,
+          "at": "2026-09-07T05:47:53.278227+00:00",
+          "triangles": 6796,
+          "triangleBudget": 10000,
+          "primitives": 8,
+          "errors": []
+        },
+        "snapshot": "assets/reviewed/rifle/ea3a84349288af0d_f846c4648df0cdb0"
+      },
+      "runtime": "/assets/rifle.glb",
+      "publishedAt": "2026-09-07T05:47:53.344147+00:00"
+    },
+    {
+      "id": "soldier",
+      "candidate": "assets/candidates/soldier.glb",
+      "source": "assets/source/soldier.blend",
+      "preview": "assets/previews/soldier.png",
+      "dimensions": {
+        "x": 0.6663,
+        "y": 1.8325,
+        "z": 1.0175
+      },
+      "triangles": 6520,
+      "meshCount": 26,
+      "materialCount": 8,
+      "nodes": [
+        "arm_l",
+        "arm_r",
+        "body",
+        "leg_l",
+        "leg_r"
+      ],
+      "sourceSha256": "95b235943312790be2be1c8b6ec61d9e932ae361a0199ba7b9c8d40d0c426399",
+      "outputSha256": "b23d4a42bc2ff06d96bb20e7a2b0b20c9b18049562540719d51ccd254ca082c5",
+      "previewSha256": "222296dc5c231d322bf9d848194cdf5a15349eb274ec65fffdecb22e27c7d623",
+      "bytes": 429800,
+      "provenance": {
+        "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+        "license": "CC0-1.0",
+        "tool": "Blender",
+        "toolVersion": "5.2.1 LTS",
+        "seed": 40721,
+        "generator": "scripts/blender_assets.py",
+        "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+      },
+      "status": "published",
+      "technicalValidation": {
+        "passed": true,
+        "at": "2026-09-07T05:47:53.333990+00:00",
+        "triangles": 6520,
+        "triangleBudget": 15000,
+        "primitives": 26,
+        "errors": []
+      },
+      "visualReview": {
+        "assetId": "soldier",
+        "decision": "approve",
+        "reviewer": "Parent agent visual inspection",
+        "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+        "reviewedAt": "2026-09-07T05:47:53.287818+00:00",
+        "outputSha256": "b23d4a42bc2ff06d96bb20e7a2b0b20c9b18049562540719d51ccd254ca082c5",
+        "sourceSha256": "95b235943312790be2be1c8b6ec61d9e932ae361a0199ba7b9c8d40d0c426399",
+        "previewSha256": "222296dc5c231d322bf9d848194cdf5a15349eb274ec65fffdecb22e27c7d623",
+        "preview": "assets/previews/soldier.png",
+        "technicalValidation": {
+          "passed": true,
+          "at": "2026-09-07T05:47:53.279367+00:00",
+          "triangles": 6520,
+          "triangleBudget": 15000,
+          "primitives": 26,
+          "errors": []
+        },
+        "snapshot": "assets/reviewed/soldier/b23d4a42bc2ff06d_95b235943312790b"
+      },
+      "runtime": "/assets/soldier.glb",
+      "publishedAt": "2026-09-07T05:47:53.344214+00:00"
+    },
+    {
+      "id": "crate",
+      "candidate": "assets/candidates/crate.glb",
+      "source": "assets/source/crate.blend",
+      "preview": "assets/previews/crate.png",
+      "dimensions": {
+        "x": 1.045,
+        "y": 0.966,
+        "z": 0.7135
+      },
+      "triangles": 1968,
+      "meshCount": 4,
+      "materialCount": 4,
+      "nodes": [
+        "body"
+      ],
+      "sourceSha256": "b2ba7b745e45faa6ffeed949bc11654662adc4e0cd8a48e01341c1ffe745bedc",
+      "outputSha256": "5c68b75853fbd57a84729d3892aa9a39ee6d54c004a1df7e36be3ea2f73d59b7",
+      "previewSha256": "27987a1c7dda358f7a407d595b7e910a4976902c2809f9564178b06057da1213",
+      "bytes": 183436,
+      "provenance": {
+        "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+        "license": "CC0-1.0",
+        "tool": "Blender",
+        "toolVersion": "5.2.1 LTS",
+        "seed": 40721,
+        "generator": "scripts/blender_assets.py",
+        "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+      },
+      "status": "published",
+      "technicalValidation": {
+        "passed": true,
+        "at": "2026-09-07T05:47:53.334763+00:00",
+        "triangles": 1968,
+        "triangleBudget": 10000,
+        "primitives": 4,
+        "errors": []
+      },
+      "visualReview": {
+        "assetId": "crate",
+        "decision": "approve",
+        "reviewer": "Parent agent visual inspection",
+        "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+        "reviewedAt": "2026-09-07T05:47:53.288141+00:00",
+        "outputSha256": "5c68b75853fbd57a84729d3892aa9a39ee6d54c004a1df7e36be3ea2f73d59b7",
+        "sourceSha256": "b2ba7b745e45faa6ffeed949bc11654662adc4e0cd8a48e01341c1ffe745bedc",
+        "previewSha256": "27987a1c7dda358f7a407d595b7e910a4976902c2809f9564178b06057da1213",
+        "preview": "assets/previews/crate.png",
+        "technicalValidation": {
+          "passed": true,
+          "at": "2026-09-07T05:47:53.280082+00:00",
+          "triangles": 1968,
+          "triangleBudget": 10000,
+          "primitives": 4,
+          "errors": []
+        },
+        "snapshot": "assets/reviewed/crate/5c68b75853fbd57a_b2ba7b745e45faa6"
+      },
+      "runtime": "/assets/crate.glb",
+      "publishedAt": "2026-09-07T05:47:53.344270+00:00"
+    },
+    {
+      "id": "container",
+      "candidate": "assets/candidates/container.glb",
+      "source": "assets/source/container.blend",
+      "preview": "assets/previews/container.png",
+      "dimensions": {
+        "x": 12.114,
+        "y": 2.626,
+        "z": 2.61
+      },
+      "triangles": 8660,
+      "meshCount": 4,
+      "materialCount": 4,
+      "nodes": [
+        "body"
+      ],
+      "sourceSha256": "9b909826172b231b64c06515fcb81342b3f7637a16cb6521b1dfd24458947cc6",
+      "outputSha256": "9c48395a73715306bcdf421e5ab2b99512b464eb65b330ad5bd9e066ca63d3dc",
+      "previewSha256": "61fcd73f48c7da853bfe95e38603ea675d8d27dbda47239060521810ef7ed842",
+      "bytes": 544096,
+      "provenance": {
+        "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+        "license": "CC0-1.0",
+        "tool": "Blender",
+        "toolVersion": "5.2.1 LTS",
+        "seed": 40721,
+        "generator": "scripts/blender_assets.py",
+        "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+      },
+      "status": "published",
+      "technicalValidation": {
+        "passed": true,
+        "at": "2026-09-07T05:47:53.335964+00:00",
+        "triangles": 8660,
+        "triangleBudget": 10000,
+        "primitives": 4,
+        "errors": []
+      },
+      "visualReview": {
+        "assetId": "container",
+        "decision": "approve",
+        "reviewer": "Parent agent visual inspection",
+        "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+        "reviewedAt": "2026-09-07T05:47:53.288442+00:00",
+        "outputSha256": "9c48395a73715306bcdf421e5ab2b99512b464eb65b330ad5bd9e066ca63d3dc",
+        "sourceSha256": "9b909826172b231b64c06515fcb81342b3f7637a16cb6521b1dfd24458947cc6",
+        "previewSha256": "61fcd73f48c7da853bfe95e38603ea675d8d27dbda47239060521810ef7ed842",
+        "preview": "assets/previews/container.png",
+        "technicalValidation": {
+          "passed": true,
+          "at": "2026-09-07T05:47:53.281042+00:00",
+          "triangles": 8660,
+          "triangleBudget": 10000,
+          "primitives": 4,
+          "errors": []
+        },
+        "snapshot": "assets/reviewed/container/9c48395a73715306_9b909826172b231b"
+      },
+      "runtime": "/assets/container.glb",
+      "publishedAt": "2026-09-07T05:47:53.344328+00:00"
+    },
+    {
+      "id": "barrel",
+      "candidate": "assets/candidates/barrel.glb",
+      "source": "assets/source/barrel.blend",
+      "preview": "assets/previews/barrel.png",
+      "dimensions": {
+        "x": 0.638,
+        "y": 0.992,
+        "z": 0.638
+      },
+      "triangles": 1452,
+      "meshCount": 5,
+      "materialCount": 5,
+      "nodes": [
+        "body"
+      ],
+      "sourceSha256": "48ef01c07e0155f192df3837ef5ba73b255c20fff07bcfa94bbf50e070ca44ec",
+      "outputSha256": "69df6d0302b8373bfe3f9d2041dc052ea9c284fe8e7300ec5796a0993d52cd1f",
+      "previewSha256": "dd6475e14682223aa64d2457d506adafbee7c936217f95a4c606d78e5ae7d80e",
+      "bytes": 179820,
+      "provenance": {
+        "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+        "license": "CC0-1.0",
+        "tool": "Blender",
+        "toolVersion": "5.2.1 LTS",
+        "seed": 40721,
+        "generator": "scripts/blender_assets.py",
+        "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+      },
+      "status": "published",
+      "technicalValidation": {
+        "passed": true,
+        "at": "2026-09-07T05:47:53.336870+00:00",
+        "triangles": 1452,
+        "triangleBudget": 10000,
+        "primitives": 5,
+        "errors": []
+      },
+      "visualReview": {
+        "assetId": "barrel",
+        "decision": "approve",
+        "reviewer": "Parent agent visual inspection",
+        "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+        "reviewedAt": "2026-09-07T05:47:53.288736+00:00",
+        "outputSha256": "69df6d0302b8373bfe3f9d2041dc052ea9c284fe8e7300ec5796a0993d52cd1f",
+        "sourceSha256": "48ef01c07e0155f192df3837ef5ba73b255c20fff07bcfa94bbf50e070ca44ec",
+        "previewSha256": "dd6475e14682223aa64d2457d506adafbee7c936217f95a4c606d78e5ae7d80e",
+        "preview": "assets/previews/barrel.png",
+        "technicalValidation": {
+          "passed": true,
+          "at": "2026-09-07T05:47:53.281762+00:00",
+          "triangles": 1452,
+          "triangleBudget": 10000,
+          "primitives": 5,
+          "errors": []
+        },
+        "snapshot": "assets/reviewed/barrel/69df6d0302b8373b_48ef01c07e0155f1"
+      },
+      "runtime": "/assets/barrel.glb",
+      "publishedAt": "2026-09-07T05:47:53.344380+00:00"
+    },
+    {
+      "id": "barrier",
+      "candidate": "assets/candidates/barrier.glb",
+      "source": "assets/source/barrier.blend",
+      "preview": "assets/previews/barrier.png",
+      "dimensions": {
+        "x": 2.1,
+        "y": 1.067,
+        "z": 0.63
+      },
+      "triangles": 644,
+      "meshCount": 4,
+      "materialCount": 4,
+      "nodes": [
+        "body"
+      ],
+      "sourceSha256": "cf14d9b5043d5d57cbf1f0340eb6daaf4a516e81060f5f7d80a24b30e896c3cf",
+      "outputSha256": "8c5068a387a0ba0096f9ad9594b84a8f4ef67d63bd5c1ea5b8212ade3066693c",
+      "previewSha256": "a2a5c43271c0f0f599da366b763b8472962704e5f45017492fd0e9b24de12877",
+      "bytes": 123292,
+      "provenance": {
+        "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+        "license": "CC0-1.0",
+        "tool": "Blender",
+        "toolVersion": "5.2.1 LTS",
+        "seed": 40721,
+        "generator": "scripts/blender_assets.py",
+        "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+      },
+      "status": "published",
+      "technicalValidation": {
+        "passed": true,
+        "at": "2026-09-07T05:47:53.337712+00:00",
+        "triangles": 644,
+        "triangleBudget": 10000,
+        "primitives": 4,
+        "errors": []
+      },
+      "visualReview": {
+        "assetId": "barrier",
+        "decision": "approve",
+        "reviewer": "Parent agent visual inspection",
+        "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+        "reviewedAt": "2026-09-07T05:47:53.289043+00:00",
+        "outputSha256": "8c5068a387a0ba0096f9ad9594b84a8f4ef67d63bd5c1ea5b8212ade3066693c",
+        "sourceSha256": "cf14d9b5043d5d57cbf1f0340eb6daaf4a516e81060f5f7d80a24b30e896c3cf",
+        "previewSha256": "a2a5c43271c0f0f599da366b763b8472962704e5f45017492fd0e9b24de12877",
+        "preview": "assets/previews/barrier.png",
+        "technicalValidation": {
+          "passed": true,
+          "at": "2026-09-07T05:47:53.282388+00:00",
+          "triangles": 644,
+          "triangleBudget": 10000,
+          "primitives": 4,
+          "errors": []
+        },
+        "snapshot": "assets/reviewed/barrier/8c5068a387a0ba00_cf14d9b5043d5d57"
+      },
+      "runtime": "/assets/barrier.glb",
+      "publishedAt": "2026-09-07T05:47:53.344439+00:00"
+    },
+    {
+      "id": "truck",
+      "candidate": "assets/candidates/truck.glb",
+      "source": "assets/source/truck.blend",
+      "preview": "assets/previews/truck.png",
+      "dimensions": {
+        "x": 2.675,
+        "y": 2.435,
+        "z": 5.8415
+      },
+      "triangles": 14160,
+      "meshCount": 9,
+      "materialCount": 9,
+      "nodes": [
+        "body"
+      ],
+      "sourceSha256": "883cceabf50dad6ad8c1530a85e8049c880eb5e4d1535fec2f9ae826e7fe8f3c",
+      "outputSha256": "cba2510c4bd5c49fee536f3705caa5ff961ca019863ac124d39e7f13fc6418ab",
+      "previewSha256": "82cb7d001440a491506d4a9358e2281ebd09ca1a05fa83b774169edfb105878b",
+      "bytes": 808280,
+      "provenance": {
+        "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+        "license": "CC0-1.0",
+        "tool": "Blender",
+        "toolVersion": "5.2.1 LTS",
+        "seed": 40721,
+        "generator": "scripts/blender_assets.py",
+        "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+      },
+      "status": "published",
+      "technicalValidation": {
+        "passed": true,
+        "at": "2026-09-07T05:47:53.339484+00:00",
+        "triangles": 14160,
+        "triangleBudget": 18000,
+        "primitives": 9,
+        "errors": []
+      },
+      "visualReview": {
+        "assetId": "truck",
+        "decision": "approve",
+        "reviewer": "Parent agent visual inspection",
+        "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+        "reviewedAt": "2026-09-07T05:47:53.289369+00:00",
+        "outputSha256": "cba2510c4bd5c49fee536f3705caa5ff961ca019863ac124d39e7f13fc6418ab",
+        "sourceSha256": "883cceabf50dad6ad8c1530a85e8049c880eb5e4d1535fec2f9ae826e7fe8f3c",
+        "previewSha256": "82cb7d001440a491506d4a9358e2281ebd09ca1a05fa83b774169edfb105878b",
+        "preview": "assets/previews/truck.png",
+        "technicalValidation": {
+          "passed": true,
+          "at": "2026-09-07T05:47:53.283799+00:00",
+          "triangles": 14160,
+          "triangleBudget": 18000,
+          "primitives": 9,
+          "errors": []
+        },
+        "snapshot": "assets/reviewed/truck/cba2510c4bd5c49f_883cceabf50dad6a"
+      },
+      "runtime": "/assets/truck.glb",
+      "publishedAt": "2026-09-07T05:47:53.344493+00:00"
+    },
+    {
+      "id": "workbench",
+      "candidate": "assets/candidates/workbench.glb",
+      "source": "assets/source/workbench.blend",
+      "preview": "assets/previews/workbench.png",
+      "dimensions": {
+        "x": 2.3,
+        "y": 1.817,
+        "z": 0.83
+      },
+      "triangles": 5332,
+      "meshCount": 7,
+      "materialCount": 7,
+      "nodes": [
+        "body"
+      ],
+      "sourceSha256": "d4c44b10e017af9fe9762120862bc70e96df936b1fd440466c79adba3c9fae2f",
+      "outputSha256": "b409cbc4cfc71b343c893cf87e791bc44ae72c9d3e204c4ff60dde94c356e71d",
+      "previewSha256": "5168eb6ac2fb496efa09dcf5a8246ea7492223ab84beec738913e478543ec10c",
+      "bytes": 425256,
+      "provenance": {
+        "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+        "license": "CC0-1.0",
+        "tool": "Blender",
+        "toolVersion": "5.2.1 LTS",
+        "seed": 40721,
+        "generator": "scripts/blender_assets.py",
+        "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+      },
+      "status": "published",
+      "technicalValidation": {
+        "passed": true,
+        "at": "2026-09-07T05:47:53.340617+00:00",
+        "triangles": 5332,
+        "triangleBudget": 10000,
+        "primitives": 7,
+        "errors": []
+      },
+      "visualReview": {
+        "assetId": "workbench",
+        "decision": "approve",
+        "reviewer": "Parent agent visual inspection",
+        "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+        "reviewedAt": "2026-09-07T05:47:53.289663+00:00",
+        "outputSha256": "b409cbc4cfc71b343c893cf87e791bc44ae72c9d3e204c4ff60dde94c356e71d",
+        "sourceSha256": "d4c44b10e017af9fe9762120862bc70e96df936b1fd440466c79adba3c9fae2f",
+        "previewSha256": "5168eb6ac2fb496efa09dcf5a8246ea7492223ab84beec738913e478543ec10c",
+        "preview": "assets/previews/workbench.png",
+        "technicalValidation": {
+          "passed": true,
+          "at": "2026-09-07T05:47:53.284666+00:00",
+          "triangles": 5332,
+          "triangleBudget": 10000,
+          "primitives": 7,
+          "errors": []
+        },
+        "snapshot": "assets/reviewed/workbench/b409cbc4cfc71b34_d4c44b10e017af9f"
+      },
+      "runtime": "/assets/workbench.glb",
+      "publishedAt": "2026-09-07T05:47:53.344546+00:00"
+    },
+    {
+      "id": "locker",
+      "candidate": "assets/candidates/locker.glb",
+      "source": "assets/source/locker.blend",
+      "preview": "assets/previews/locker.png",
+      "dimensions": {
+        "x": 0.85,
+        "y": 1.912,
+        "z": 0.6255
+      },
+      "triangles": 2052,
+      "meshCount": 5,
+      "materialCount": 5,
+      "nodes": [
+        "body"
+      ],
+      "sourceSha256": "96c0f45366dc4d752cecfbbede7a92fa520e268e006591de90fa2f8e9892d4aa",
+      "outputSha256": "e4f56a161c265058c8c31b452cf23ebe400e354e30dad88886eac93f6c4d6489",
+      "previewSha256": "d0949126834a5248deec4651df97d8698309a7f4d307528f429a269fae6e9bdf",
+      "bytes": 221820,
+      "provenance": {
+        "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+        "license": "CC0-1.0",
+        "tool": "Blender",
+        "toolVersion": "5.2.1 LTS",
+        "seed": 40721,
+        "generator": "scripts/blender_assets.py",
+        "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+      },
+      "status": "published",
+      "technicalValidation": {
+        "passed": true,
+        "at": "2026-09-07T05:47:53.341525+00:00",
+        "triangles": 2052,
+        "triangleBudget": 10000,
+        "primitives": 5,
+        "errors": []
+      },
+      "visualReview": {
+        "assetId": "locker",
+        "decision": "approve",
+        "reviewer": "Parent agent visual inspection",
+        "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+        "reviewedAt": "2026-09-07T05:47:53.295316+00:00",
+        "outputSha256": "e4f56a161c265058c8c31b452cf23ebe400e354e30dad88886eac93f6c4d6489",
+        "sourceSha256": "96c0f45366dc4d752cecfbbede7a92fa520e268e006591de90fa2f8e9892d4aa",
+        "previewSha256": "d0949126834a5248deec4651df97d8698309a7f4d307528f429a269fae6e9bdf",
+        "preview": "assets/previews/locker.png",
+        "technicalValidation": {
+          "passed": true,
+          "at": "2026-09-07T05:47:53.285357+00:00",
+          "triangles": 2052,
+          "triangleBudget": 10000,
+          "primitives": 5,
+          "errors": []
+        },
+        "snapshot": "assets/reviewed/locker/e4f56a161c265058_96c0f45366dc4d75"
+      },
+      "runtime": "/assets/locker.glb",
+      "publishedAt": "2026-09-07T05:47:53.344594+00:00"
+    },
+    {
+      "id": "radio",
+      "candidate": "assets/candidates/radio.glb",
+      "source": "assets/source/radio.blend",
+      "preview": "assets/previews/radio.png",
+      "dimensions": {
+        "x": 0.43,
+        "y": 0.855,
+        "z": 0.311
+      },
+      "triangles": 2500,
+      "meshCount": 5,
+      "materialCount": 5,
+      "nodes": [
+        "body"
+      ],
+      "sourceSha256": "2a34b05fddcc6c3fd6db113bd18e2dbfdd98fa1d0d536fd892b068fb8aab81e0",
+      "outputSha256": "7b9a8993589241de1820c5124127c6aadf0253e9cba0397daaeca19e9af6e9cb",
+      "previewSha256": "ded8cc637657eb562182456d958445d361e5a1846d70d703ba9c39726d00f76a",
+      "bytes": 211188,
+      "provenance": {
+        "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+        "license": "CC0-1.0",
+        "tool": "Blender",
+        "toolVersion": "5.2.1 LTS",
+        "seed": 40721,
+        "generator": "scripts/blender_assets.py",
+        "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+      },
+      "status": "published",
+      "technicalValidation": {
+        "passed": true,
+        "at": "2026-09-07T05:47:53.342309+00:00",
+        "triangles": 2500,
+        "triangleBudget": 10000,
+        "primitives": 5,
+        "errors": []
+      },
+      "visualReview": {
+        "assetId": "radio",
+        "decision": "approve",
+        "reviewer": "Parent agent visual inspection",
+        "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+        "reviewedAt": "2026-09-07T05:47:53.296176+00:00",
+        "outputSha256": "7b9a8993589241de1820c5124127c6aadf0253e9cba0397daaeca19e9af6e9cb",
+        "sourceSha256": "2a34b05fddcc6c3fd6db113bd18e2dbfdd98fa1d0d536fd892b068fb8aab81e0",
+        "previewSha256": "ded8cc637657eb562182456d958445d361e5a1846d70d703ba9c39726d00f76a",
+        "preview": "assets/previews/radio.png",
+        "technicalValidation": {
+          "passed": true,
+          "at": "2026-09-07T05:47:53.286008+00:00",
+          "triangles": 2500,
+          "triangleBudget": 10000,
+          "primitives": 5,
+          "errors": []
+        },
+        "snapshot": "assets/reviewed/radio/7b9a8993589241de_2a34b05fddcc6c3f"
+      },
+      "runtime": "/assets/radio.glb",
+      "publishedAt": "2026-09-07T05:47:53.344646+00:00"
+    },
+    {
+      "id": "backpack",
+      "candidate": "assets/candidates/backpack.glb",
+      "source": "assets/source/backpack.blend",
+      "preview": "assets/previews/backpack.png",
+      "dimensions": {
+        "x": 0.43,
+        "y": 0.6735,
+        "z": 0.406
+      },
+      "triangles": 1404,
+      "meshCount": 5,
+      "materialCount": 5,
+      "nodes": [
+        "body"
+      ],
+      "sourceSha256": "a18e21d30cca58ecfe91604220f2c3727411174e8ef451cf7652d40645c97f78",
+      "outputSha256": "147c3b3cb97532d728f0d578f35fa6a632976f152a06f7b8a4258ae91cb8f066",
+      "previewSha256": "783c6bbe2fad76e97c8c6bce430b6d5ef1615dcec0b2cf660ff780699fe2f5e4",
+      "bytes": 167032,
+      "provenance": {
+        "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+        "license": "CC0-1.0",
+        "tool": "Blender",
+        "toolVersion": "5.2.1 LTS",
+        "seed": 40721,
+        "generator": "scripts/blender_assets.py",
+        "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+      },
+      "status": "published",
+      "technicalValidation": {
+        "passed": true,
+        "at": "2026-09-07T05:47:53.343023+00:00",
+        "triangles": 1404,
+        "triangleBudget": 10000,
+        "primitives": 5,
+        "errors": []
+      },
+      "visualReview": {
+        "assetId": "backpack",
+        "decision": "approve",
+        "reviewer": "Parent agent visual inspection",
+        "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+        "reviewedAt": "2026-09-07T05:47:53.297242+00:00",
+        "outputSha256": "147c3b3cb97532d728f0d578f35fa6a632976f152a06f7b8a4258ae91cb8f066",
+        "sourceSha256": "a18e21d30cca58ecfe91604220f2c3727411174e8ef451cf7652d40645c97f78",
+        "previewSha256": "783c6bbe2fad76e97c8c6bce430b6d5ef1615dcec0b2cf660ff780699fe2f5e4",
+        "preview": "assets/previews/backpack.png",
+        "technicalValidation": {
+          "passed": true,
+          "at": "2026-09-07T05:47:53.286637+00:00",
+          "triangles": 1404,
+          "triangleBudget": 10000,
+          "primitives": 5,
+          "errors": []
+        },
+        "snapshot": "assets/reviewed/backpack/147c3b3cb97532d7_a18e21d30cca58ec"
+      },
+      "runtime": "/assets/backpack.glb",
+      "publishedAt": "2026-09-07T05:47:53.344696+00:00"
+    },
+    {
+      "id": "generator",
+      "candidate": "assets/candidates/generator.glb",
+      "source": "assets/source/generator.blend",
+      "preview": "assets/previews/generator.png",
+      "dimensions": {
+        "x": 1.15,
+        "y": 0.788,
+        "z": 0.7
+      },
+      "triangles": 2720,
+      "meshCount": 4,
+      "materialCount": 4,
+      "nodes": [
+        "body"
+      ],
+      "sourceSha256": "0a3346643d17d73aead572946738edeac9a0b7f7603f860906f9e8b46b8175e0",
+      "outputSha256": "b86141113d835fadb6b4bfbfe29d10e0261047791958f898f3e27fec9fe521cf",
+      "previewSha256": "888cf6338ae6267b2fe99bad3f46bbf8dcf8c69c3d886ccb552835d61e7a28f7",
+      "bytes": 200700,
+      "provenance": {
+        "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+        "license": "CC0-1.0",
+        "tool": "Blender",
+        "toolVersion": "5.2.1 LTS",
+        "seed": 40721,
+        "generator": "scripts/blender_assets.py",
+        "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+      },
+      "status": "published",
+      "technicalValidation": {
+        "passed": true,
+        "at": "2026-09-07T05:47:53.343744+00:00",
+        "triangles": 2720,
+        "triangleBudget": 10000,
+        "primitives": 4,
+        "errors": []
+      },
+      "visualReview": {
+        "assetId": "generator",
+        "decision": "approve",
+        "reviewer": "Parent agent visual inspection",
+        "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+        "reviewedAt": "2026-09-07T05:47:53.297962+00:00",
+        "outputSha256": "b86141113d835fadb6b4bfbfe29d10e0261047791958f898f3e27fec9fe521cf",
+        "sourceSha256": "0a3346643d17d73aead572946738edeac9a0b7f7603f860906f9e8b46b8175e0",
+        "previewSha256": "888cf6338ae6267b2fe99bad3f46bbf8dcf8c69c3d886ccb552835d61e7a28f7",
+        "preview": "assets/previews/generator.png",
+        "technicalValidation": {
+          "passed": true,
+          "at": "2026-09-07T05:47:53.287305+00:00",
+          "triangles": 2720,
+          "triangleBudget": 10000,
+          "primitives": 4,
+          "errors": []
+        },
+        "snapshot": "assets/reviewed/generator/b86141113d835fad_0a3346643d17d73a"
+      },
+      "runtime": "/assets/generator.glb",
+      "publishedAt": "2026-09-07T05:47:53.344747+00:00"
+    },
+    {
+      "id": "medkit",
+      "candidate": "assets/candidates/medkit.glb",
+      "source": "assets/source/medkit.blend",
+      "preview": "assets/previews/medkit.png",
+      "dimensions": {
+        "x": 0.31,
+        "y": 0.255,
+        "z": 0.2295
+      },
+      "triangles": 756,
+      "meshCount": 4,
+      "materialCount": 4,
+      "nodes": [
+        "body"
+      ],
+      "sourceSha256": "1cc36bc20b10bcf13425312d006e4730fbd061de32d5c27573bb621e17ce5a28",
+      "outputSha256": "1e67031012b01814cc23c8f2d725693886fe5ccfcf7bf1878af5a863cf27e913",
+      "previewSha256": "3985e9bad23726992d01cf117e77ed13debd8fcfab22ff40a4fad25aa5b83db0",
+      "bytes": 129168,
+      "provenance": {
+        "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+        "license": "CC0-1.0",
+        "tool": "Blender",
+        "toolVersion": "5.2.1 LTS",
+        "seed": 40721,
+        "generator": "scripts/blender_assets.py",
+        "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+      },
+      "status": "published",
+      "technicalValidation": {
+        "passed": true,
+        "at": "2026-09-07T05:54:58.017344+00:00",
+        "triangles": 756,
+        "triangleBudget": 10000,
+        "primitives": 4,
+        "errors": []
+      },
+      "visualReview": {
+        "assetId": "medkit",
+        "decision": "approve",
+        "reviewer": "Parent agent",
+        "notes": "Inspected final rendered PNG: ivory plus is legible on the muted green patch; fabric pouch, straps, rounded corners, and weathering read clearly at gameplay scale. Accepted for prototype runtime.",
+        "reviewedAt": "2026-09-07T05:54:57.871219+00:00",
+        "outputSha256": "1e67031012b01814cc23c8f2d725693886fe5ccfcf7bf1878af5a863cf27e913",
+        "sourceSha256": "1cc36bc20b10bcf13425312d006e4730fbd061de32d5c27573bb621e17ce5a28",
+        "previewSha256": "3985e9bad23726992d01cf117e77ed13debd8fcfab22ff40a4fad25aa5b83db0",
+        "preview": "assets/previews/medkit.png",
+        "technicalValidation": {
+          "passed": true,
+          "at": "2026-09-07T05:54:57.871075+00:00",
+          "triangles": 756,
+          "triangleBudget": 10000,
+          "primitives": 4,
+          "errors": []
+        },
+        "snapshot": "assets/reviewed/medkit/1e67031012b01814_1cc36bc20b10bcf1"
+      },
+      "runtime": "/assets/medkit.glb",
+      "publishedAt": "2026-09-07T05:54:58.018789+00:00"
+    }
+  ]
+}

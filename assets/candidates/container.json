@@ -1,0 +1,59 @@
+{
+  "id": "container",
+  "candidate": "assets/candidates/container.glb",
+  "source": "assets/source/container.blend",
+  "preview": "assets/previews/container.png",
+  "dimensions": {
+    "x": 12.114,
+    "y": 2.626,
+    "z": 2.61
+  },
+  "triangles": 8660,
+  "meshCount": 4,
+  "materialCount": 4,
+  "nodes": [
+    "body"
+  ],
+  "sourceSha256": "9b909826172b231b64c06515fcb81342b3f7637a16cb6521b1dfd24458947cc6",
+  "outputSha256": "9c48395a73715306bcdf421e5ab2b99512b464eb65b330ad5bd9e066ca63d3dc",
+  "previewSha256": "61fcd73f48c7da853bfe95e38603ea675d8d27dbda47239060521810ef7ed842",
+  "bytes": 544096,
+  "provenance": {
+    "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+    "license": "CC0-1.0",
+    "tool": "Blender",
+    "toolVersion": "5.2.1 LTS",
+    "seed": 40721,
+    "generator": "scripts/blender_assets.py",
+    "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+  },
+  "status": "reviewed",
+  "technicalValidation": {
+    "passed": true,
+    "at": "2026-09-07T06:36:32.553957+00:00",
+    "triangles": 8660,
+    "triangleBudget": 10000,
+    "primitives": 4,
+    "errors": []
+  },
+  "visualReview": {
+    "assetId": "container",
+    "decision": "approve",
+    "reviewer": "Parent agent visual inspection",
+    "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+    "reviewedAt": "2026-09-07T05:47:53.288442+00:00",
+    "outputSha256": "9c48395a73715306bcdf421e5ab2b99512b464eb65b330ad5bd9e066ca63d3dc",
+    "sourceSha256": "9b909826172b231b64c06515fcb81342b3f7637a16cb6521b1dfd24458947cc6",
+    "previewSha256": "61fcd73f48c7da853bfe95e38603ea675d8d27dbda47239060521810ef7ed842",
+    "preview": "assets/previews/container.png",
+    "technicalValidation": {
+      "passed": true,
+      "at": "2026-09-07T05:47:53.281042+00:00",
+      "triangles": 8660,
+      "triangleBudget": 10000,
+      "primitives": 4,
+      "errors": []
+    },
+    "snapshot": "assets/reviewed/container/9c48395a73715306_9b909826172b231b"
+  }
+}

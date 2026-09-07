@@ -1,0 +1,59 @@
+{
+  "id": "barrel",
+  "candidate": "assets/candidates/barrel.glb",
+  "source": "assets/source/barrel.blend",
+  "preview": "assets/previews/barrel.png",
+  "dimensions": {
+    "x": 0.638,
+    "y": 0.992,
+    "z": 0.638
+  },
+  "triangles": 1452,
+  "meshCount": 5,
+  "materialCount": 5,
+  "nodes": [
+    "body"
+  ],
+  "sourceSha256": "48ef01c07e0155f192df3837ef5ba73b255c20fff07bcfa94bbf50e070ca44ec",
+  "outputSha256": "69df6d0302b8373bfe3f9d2041dc052ea9c284fe8e7300ec5796a0993d52cd1f",
+  "previewSha256": "dd6475e14682223aa64d2457d506adafbee7c936217f95a4c606d78e5ae7d80e",
+  "bytes": 179820,
+  "provenance": {
+    "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+    "license": "CC0-1.0",
+    "tool": "Blender",
+    "toolVersion": "5.2.1 LTS",
+    "seed": 40721,
+    "generator": "scripts/blender_assets.py",
+    "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+  },
+  "status": "reviewed",
+  "technicalValidation": {
+    "passed": true,
+    "at": "2026-09-07T05:47:53.281762+00:00",
+    "triangles": 1452,
+    "triangleBudget": 10000,
+    "primitives": 5,
+    "errors": []
+  },
+  "visualReview": {
+    "assetId": "barrel",
+    "decision": "approve",
+    "reviewer": "Parent agent visual inspection",
+    "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+    "reviewedAt": "2026-09-07T05:47:53.288736+00:00",
+    "outputSha256": "69df6d0302b8373bfe3f9d2041dc052ea9c284fe8e7300ec5796a0993d52cd1f",
+    "sourceSha256": "48ef01c07e0155f192df3837ef5ba73b255c20fff07bcfa94bbf50e070ca44ec",
+    "previewSha256": "dd6475e14682223aa64d2457d506adafbee7c936217f95a4c606d78e5ae7d80e",
+    "preview": "assets/previews/barrel.png",
+    "technicalValidation": {
+      "passed": true,
+      "at": "2026-09-07T05:47:53.281762+00:00",
+      "triangles": 1452,
+      "triangleBudget": 10000,
+      "primitives": 5,
+      "errors": []
+    },
+    "snapshot": "assets/reviewed/barrel/69df6d0302b8373b_48ef01c07e0155f1"
+  }
+}

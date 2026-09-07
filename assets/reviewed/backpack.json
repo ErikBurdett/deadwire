@@ -1,0 +1,59 @@
+{
+  "id": "backpack",
+  "candidate": "assets/candidates/backpack.glb",
+  "source": "assets/source/backpack.blend",
+  "preview": "assets/previews/backpack.png",
+  "dimensions": {
+    "x": 0.43,
+    "y": 0.6735,
+    "z": 0.406
+  },
+  "triangles": 1404,
+  "meshCount": 5,
+  "materialCount": 5,
+  "nodes": [
+    "body"
+  ],
+  "sourceSha256": "a18e21d30cca58ecfe91604220f2c3727411174e8ef451cf7652d40645c97f78",
+  "outputSha256": "147c3b3cb97532d728f0d578f35fa6a632976f152a06f7b8a4258ae91cb8f066",
+  "previewSha256": "783c6bbe2fad76e97c8c6bce430b6d5ef1615dcec0b2cf660ff780699fe2f5e4",
+  "bytes": 167032,
+  "provenance": {
+    "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+    "license": "CC0-1.0",
+    "tool": "Blender",
+    "toolVersion": "5.2.1 LTS",
+    "seed": 40721,
+    "generator": "scripts/blender_assets.py",
+    "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+  },
+  "status": "reviewed",
+  "technicalValidation": {
+    "passed": true,
+    "at": "2026-09-07T05:47:53.286637+00:00",
+    "triangles": 1404,
+    "triangleBudget": 10000,
+    "primitives": 5,
+    "errors": []
+  },
+  "visualReview": {
+    "assetId": "backpack",
+    "decision": "approve",
+    "reviewer": "Parent agent visual inspection",
+    "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+    "reviewedAt": "2026-09-07T05:47:53.297242+00:00",
+    "outputSha256": "147c3b3cb97532d728f0d578f35fa6a632976f152a06f7b8a4258ae91cb8f066",
+    "sourceSha256": "a18e21d30cca58ecfe91604220f2c3727411174e8ef451cf7652d40645c97f78",
+    "previewSha256": "783c6bbe2fad76e97c8c6bce430b6d5ef1615dcec0b2cf660ff780699fe2f5e4",
+    "preview": "assets/previews/backpack.png",
+    "technicalValidation": {
+      "passed": true,
+      "at": "2026-09-07T05:47:53.286637+00:00",
+      "triangles": 1404,
+      "triangleBudget": 10000,
+      "primitives": 5,
+      "errors": []
+    },
+    "snapshot": "assets/reviewed/backpack/147c3b3cb97532d7_a18e21d30cca58ec"
+  }
+}

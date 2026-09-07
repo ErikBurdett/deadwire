@@ -1,0 +1,59 @@
+{
+  "id": "workbench",
+  "candidate": "assets/candidates/workbench.glb",
+  "source": "assets/source/workbench.blend",
+  "preview": "assets/previews/workbench.png",
+  "dimensions": {
+    "x": 2.3,
+    "y": 1.817,
+    "z": 0.83
+  },
+  "triangles": 5332,
+  "meshCount": 7,
+  "materialCount": 7,
+  "nodes": [
+    "body"
+  ],
+  "sourceSha256": "d4c44b10e017af9fe9762120862bc70e96df936b1fd440466c79adba3c9fae2f",
+  "outputSha256": "b409cbc4cfc71b343c893cf87e791bc44ae72c9d3e204c4ff60dde94c356e71d",
+  "previewSha256": "5168eb6ac2fb496efa09dcf5a8246ea7492223ab84beec738913e478543ec10c",
+  "bytes": 425256,
+  "provenance": {
+    "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+    "license": "CC0-1.0",
+    "tool": "Blender",
+    "toolVersion": "5.2.1 LTS",
+    "seed": 40721,
+    "generator": "scripts/blender_assets.py",
+    "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+  },
+  "status": "reviewed",
+  "technicalValidation": {
+    "passed": true,
+    "at": "2026-09-07T05:47:53.284666+00:00",
+    "triangles": 5332,
+    "triangleBudget": 10000,
+    "primitives": 7,
+    "errors": []
+  },
+  "visualReview": {
+    "assetId": "workbench",
+    "decision": "approve",
+    "reviewer": "Parent agent visual inspection",
+    "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+    "reviewedAt": "2026-09-07T05:47:53.289663+00:00",
+    "outputSha256": "b409cbc4cfc71b343c893cf87e791bc44ae72c9d3e204c4ff60dde94c356e71d",
+    "sourceSha256": "d4c44b10e017af9fe9762120862bc70e96df936b1fd440466c79adba3c9fae2f",
+    "previewSha256": "5168eb6ac2fb496efa09dcf5a8246ea7492223ab84beec738913e478543ec10c",
+    "preview": "assets/previews/workbench.png",
+    "technicalValidation": {
+      "passed": true,
+      "at": "2026-09-07T05:47:53.284666+00:00",
+      "triangles": 5332,
+      "triangleBudget": 10000,
+      "primitives": 7,
+      "errors": []
+    },
+    "snapshot": "assets/reviewed/workbench/b409cbc4cfc71b34_d4c44b10e017af9f"
+  }
+}

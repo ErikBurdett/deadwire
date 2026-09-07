@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Game Art Factory"
+  short_description: "Build and review reusable Blender game assets"
+  default_prompt: "Use $blender-game-art-factory to set up a reproducible, reviewed Blender asset pipeline in my game project."

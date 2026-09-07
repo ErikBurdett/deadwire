@@ -1,0 +1,59 @@
+{
+  "id": "medkit",
+  "candidate": "assets/candidates/medkit.glb",
+  "source": "assets/source/medkit.blend",
+  "preview": "assets/previews/medkit.png",
+  "dimensions": {
+    "x": 0.31,
+    "y": 0.255,
+    "z": 0.2295
+  },
+  "triangles": 756,
+  "meshCount": 4,
+  "materialCount": 4,
+  "nodes": [
+    "body"
+  ],
+  "sourceSha256": "1cc36bc20b10bcf13425312d006e4730fbd061de32d5c27573bb621e17ce5a28",
+  "outputSha256": "1e67031012b01814cc23c8f2d725693886fe5ccfcf7bf1878af5a863cf27e913",
+  "previewSha256": "3985e9bad23726992d01cf117e77ed13debd8fcfab22ff40a4fad25aa5b83db0",
+  "bytes": 129168,
+  "provenance": {
+    "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+    "license": "CC0-1.0",
+    "tool": "Blender",
+    "toolVersion": "5.2.1 LTS",
+    "seed": 40721,
+    "generator": "scripts/blender_assets.py",
+    "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+  },
+  "status": "reviewed",
+  "technicalValidation": {
+    "passed": true,
+    "at": "2026-09-07T05:54:57.871075+00:00",
+    "triangles": 756,
+    "triangleBudget": 10000,
+    "primitives": 4,
+    "errors": []
+  },
+  "visualReview": {
+    "assetId": "medkit",
+    "decision": "approve",
+    "reviewer": "Parent agent",
+    "notes": "Inspected final rendered PNG: ivory plus is legible on the muted green patch; fabric pouch, straps, rounded corners, and weathering read clearly at gameplay scale. Accepted for prototype runtime.",
+    "reviewedAt": "2026-09-07T05:54:57.871219+00:00",
+    "outputSha256": "1e67031012b01814cc23c8f2d725693886fe5ccfcf7bf1878af5a863cf27e913",
+    "sourceSha256": "1cc36bc20b10bcf13425312d006e4730fbd061de32d5c27573bb621e17ce5a28",
+    "previewSha256": "3985e9bad23726992d01cf117e77ed13debd8fcfab22ff40a4fad25aa5b83db0",
+    "preview": "assets/previews/medkit.png",
+    "technicalValidation": {
+      "passed": true,
+      "at": "2026-09-07T05:54:57.871075+00:00",
+      "triangles": 756,
+      "triangleBudget": 10000,
+      "primitives": 4,
+      "errors": []
+    },
+    "snapshot": "assets/reviewed/medkit/1e67031012b01814_1cc36bc20b10bcf1"
+  }
+}

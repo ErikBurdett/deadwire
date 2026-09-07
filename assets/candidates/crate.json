@@ -1,0 +1,59 @@
+{
+  "id": "crate",
+  "candidate": "assets/candidates/crate.glb",
+  "source": "assets/source/crate.blend",
+  "preview": "assets/previews/crate.png",
+  "dimensions": {
+    "x": 1.045,
+    "y": 0.966,
+    "z": 0.7135
+  },
+  "triangles": 1968,
+  "meshCount": 4,
+  "materialCount": 4,
+  "nodes": [
+    "body"
+  ],
+  "sourceSha256": "b2ba7b745e45faa6ffeed949bc11654662adc4e0cd8a48e01341c1ffe745bedc",
+  "outputSha256": "5c68b75853fbd57a84729d3892aa9a39ee6d54c004a1df7e36be3ea2f73d59b7",
+  "previewSha256": "27987a1c7dda358f7a407d595b7e910a4976902c2809f9564178b06057da1213",
+  "bytes": 183436,
+  "provenance": {
+    "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+    "license": "CC0-1.0",
+    "tool": "Blender",
+    "toolVersion": "5.2.1 LTS",
+    "seed": 40721,
+    "generator": "scripts/blender_assets.py",
+    "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+  },
+  "status": "reviewed",
+  "technicalValidation": {
+    "passed": true,
+    "at": "2026-09-07T06:36:32.551099+00:00",
+    "triangles": 1968,
+    "triangleBudget": 10000,
+    "primitives": 4,
+    "errors": []
+  },
+  "visualReview": {
+    "assetId": "crate",
+    "decision": "approve",
+    "reviewer": "Parent agent visual inspection",
+    "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+    "reviewedAt": "2026-09-07T05:47:53.288141+00:00",
+    "outputSha256": "5c68b75853fbd57a84729d3892aa9a39ee6d54c004a1df7e36be3ea2f73d59b7",
+    "sourceSha256": "b2ba7b745e45faa6ffeed949bc11654662adc4e0cd8a48e01341c1ffe745bedc",
+    "previewSha256": "27987a1c7dda358f7a407d595b7e910a4976902c2809f9564178b06057da1213",
+    "preview": "assets/previews/crate.png",
+    "technicalValidation": {
+      "passed": true,
+      "at": "2026-09-07T05:47:53.280082+00:00",
+      "triangles": 1968,
+      "triangleBudget": 10000,
+      "primitives": 4,
+      "errors": []
+    },
+    "snapshot": "assets/reviewed/crate/5c68b75853fbd57a_b2ba7b745e45faa6"
+  }
+}

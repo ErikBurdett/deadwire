@@ -1,0 +1,13 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+*.log
+__pycache__/
+*.py[cod]
+*.blend1
+*.blend2
+.DS_Store
+.env
+.env.*
+!.env.example

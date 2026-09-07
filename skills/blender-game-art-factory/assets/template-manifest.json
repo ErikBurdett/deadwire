@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "description": "Self-contained authored factory sources; generated assets deliberately excluded.",
+  "files": [
+    {
+      "path": "scripts/art_factory.py",
+      "sha256": "1b278499b58ef4e541bf0695cbaf311bb43cc7a93b27adbb1df54a40c0a069ba",
+      "origin": "DEADWIRE/scripts/art_factory.py"
+    },
+    {
+      "path": "scripts/blender_assets.py",
+      "sha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c",
+      "origin": "DEADWIRE/scripts/blender_assets.py"
+    },
+    {
+      "path": "docs/ASSET_BRIEF.md",
+      "sha256": "5555ddcba084a8080d4fbc510698e9875d44479a33c560301efcaf2a31adef01",
+      "origin": "blender-game-art-factory asset brief"
+    }
+  ]
+}

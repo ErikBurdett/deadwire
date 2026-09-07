@@ -1,0 +1,39 @@
+{
+  "at": "2026-09-07T05:48:54.093371+00:00",
+  "scope": "Isolated temporary fixture copied from real rifle candidate; live reviews/runtime untouched",
+  "tests": [
+    {
+      "name": "unreviewed publish refused",
+      "passed": true,
+      "message": "rifle: visual review required before publish"
+    },
+    {
+      "name": "rejected publish refused",
+      "passed": true,
+      "message": "rifle: visual review rejected"
+    },
+    {
+      "name": "stale visual review refused",
+      "passed": true,
+      "message": "rifle: candidate changed after review"
+    },
+    {
+      "name": "changed preview evidence refused",
+      "passed": true,
+      "message": "Missing or modified assets/previews/rifle.png"
+    },
+    {
+      "name": "truncated GLB refused",
+      "passed": true,
+      "message": "Truncated GLB: /tmp/deadwire-factory-qa-2s7r0tre/broken.glb"
+    },
+    {
+      "name": "matching validated reviewed publish preserves bytes",
+      "passed": true
+    },
+    {
+      "name": "only requested approved asset published",
+      "passed": true
+    }
+  ]
+}

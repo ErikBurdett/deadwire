@@ -1,0 +1,27 @@
+name: Bug report
+description: Report a reproducible game or pipeline defect.
+labels: [bug]
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the raid seed when available, controls used, and relevant screenshots.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, browser and version, GPU, Node version; Blender version for factory bugs.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or evidence
+      description: Remove personal information and credentials before posting.

@@ -1,0 +1,59 @@
+{
+  "id": "radio",
+  "candidate": "assets/candidates/radio.glb",
+  "source": "assets/source/radio.blend",
+  "preview": "assets/previews/radio.png",
+  "dimensions": {
+    "x": 0.43,
+    "y": 0.855,
+    "z": 0.311
+  },
+  "triangles": 2500,
+  "meshCount": 5,
+  "materialCount": 5,
+  "nodes": [
+    "body"
+  ],
+  "sourceSha256": "2a34b05fddcc6c3fd6db113bd18e2dbfdd98fa1d0d536fd892b068fb8aab81e0",
+  "outputSha256": "7b9a8993589241de1820c5124127c6aadf0253e9cba0397daaeca19e9af6e9cb",
+  "previewSha256": "ded8cc637657eb562182456d958445d361e5a1846d70d703ba9c39726d00f76a",
+  "bytes": 211188,
+  "provenance": {
+    "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+    "license": "CC0-1.0",
+    "tool": "Blender",
+    "toolVersion": "5.2.1 LTS",
+    "seed": 40721,
+    "generator": "scripts/blender_assets.py",
+    "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+  },
+  "status": "reviewed",
+  "technicalValidation": {
+    "passed": true,
+    "at": "2026-09-07T05:47:53.286008+00:00",
+    "triangles": 2500,
+    "triangleBudget": 10000,
+    "primitives": 5,
+    "errors": []
+  },
+  "visualReview": {
+    "assetId": "radio",
+    "decision": "approve",
+    "reviewer": "Parent agent visual inspection",
+    "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+    "reviewedAt": "2026-09-07T05:47:53.296176+00:00",
+    "outputSha256": "7b9a8993589241de1820c5124127c6aadf0253e9cba0397daaeca19e9af6e9cb",
+    "sourceSha256": "2a34b05fddcc6c3fd6db113bd18e2dbfdd98fa1d0d536fd892b068fb8aab81e0",
+    "previewSha256": "ded8cc637657eb562182456d958445d361e5a1846d70d703ba9c39726d00f76a",
+    "preview": "assets/previews/radio.png",
+    "technicalValidation": {
+      "passed": true,
+      "at": "2026-09-07T05:47:53.286008+00:00",
+      "triangles": 2500,
+      "triangleBudget": 10000,
+      "primitives": 5,
+      "errors": []
+    },
+    "snapshot": "assets/reviewed/radio/7b9a8993589241de_2a34b05fddcc6c3f"
+  }
+}

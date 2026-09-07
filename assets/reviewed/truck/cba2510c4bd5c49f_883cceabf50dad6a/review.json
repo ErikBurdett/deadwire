@@ -1,0 +1,20 @@
+{
+  "assetId": "truck",
+  "decision": "approve",
+  "reviewer": "Parent agent visual inspection",
+  "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+  "reviewedAt": "2026-09-07T05:47:53.289369+00:00",
+  "outputSha256": "cba2510c4bd5c49fee536f3705caa5ff961ca019863ac124d39e7f13fc6418ab",
+  "sourceSha256": "883cceabf50dad6ad8c1530a85e8049c880eb5e4d1535fec2f9ae826e7fe8f3c",
+  "previewSha256": "82cb7d001440a491506d4a9358e2281ebd09ca1a05fa83b774169edfb105878b",
+  "preview": "assets/previews/truck.png",
+  "technicalValidation": {
+    "passed": true,
+    "at": "2026-09-07T05:47:53.283799+00:00",
+    "triangles": 14160,
+    "triangleBudget": 18000,
+    "primitives": 9,
+    "errors": []
+  },
+  "snapshot": "assets/reviewed/truck/cba2510c4bd5c49f_883cceabf50dad6a"
+}

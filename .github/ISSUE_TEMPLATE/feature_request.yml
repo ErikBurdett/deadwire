@@ -1,0 +1,19 @@
+name: Feature proposal
+description: Propose a player outcome or contributor improvement.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What should improve?
+      description: Describe the player or contributor problem and the desired result.
+    validations:
+      required: true
+  - type: textarea
+    id: approach
+    attributes:
+      label: Suggested approach and tradeoffs
+  - type: textarea
+    id: evidence
+    attributes:
+      label: How would we verify it?

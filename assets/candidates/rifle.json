@@ -1,0 +1,61 @@
+{
+  "id": "rifle",
+  "candidate": "assets/candidates/rifle.glb",
+  "source": "assets/source/rifle.blend",
+  "preview": "assets/previews/rifle.png",
+  "dimensions": {
+    "x": 0.118,
+    "y": 0.4186,
+    "z": 1.19
+  },
+  "triangles": 6796,
+  "meshCount": 8,
+  "materialCount": 5,
+  "nodes": [
+    "body",
+    "optic",
+    "suppressor"
+  ],
+  "sourceSha256": "f846c4648df0cdb0bfe3dd6a50fa708e3e67e71d172cb706d2998363c41f8c35",
+  "outputSha256": "ea3a84349288af0dd80fa695acb5c126760a729bb2afa02fdc98a8583757f157",
+  "previewSha256": "6b17ae0c10ae054dc379e9fd7a31abead79d59b8823d3020c50467cb9f92cda1",
+  "bytes": 382952,
+  "provenance": {
+    "origin": "Original deterministic procedural geometry and pixel textures authored for DEADWIRE",
+    "license": "CC0-1.0",
+    "tool": "Blender",
+    "toolVersion": "5.2.1 LTS",
+    "seed": 40721,
+    "generator": "scripts/blender_assets.py",
+    "generatorSha256": "5e5e393949bfb3b7da013b90ff746d9b96b6e4313340f1f9dcbb7e3dfa6a305c"
+  },
+  "status": "reviewed",
+  "technicalValidation": {
+    "passed": true,
+    "at": "2026-09-07T06:36:32.547174+00:00",
+    "triangles": 6796,
+    "triangleBudget": 10000,
+    "primitives": 8,
+    "errors": []
+  },
+  "visualReview": {
+    "assetId": "rifle",
+    "decision": "approve",
+    "reviewer": "Parent agent visual inspection",
+    "notes": "Inspected contact sheet: clear industrial silhouettes; metal weathering legible on crate, container, barrel, truck and locker; kit readable; rifle attachments readable. Soldier is anatomically blocky with square knee pads and obscured face; accepted as an economical polygon prototype and requires another anatomy and art pass for realistic final quality.",
+    "reviewedAt": "2026-09-07T05:47:53.287366+00:00",
+    "outputSha256": "ea3a84349288af0dd80fa695acb5c126760a729bb2afa02fdc98a8583757f157",
+    "sourceSha256": "f846c4648df0cdb0bfe3dd6a50fa708e3e67e71d172cb706d2998363c41f8c35",
+    "previewSha256": "6b17ae0c10ae054dc379e9fd7a31abead79d59b8823d3020c50467cb9f92cda1",
+    "preview": "assets/previews/rifle.png",
+    "technicalValidation": {
+      "passed": true,
+      "at": "2026-09-07T05:47:53.278227+00:00",
+      "triangles": 6796,
+      "triangleBudget": 10000,
+      "primitives": 8,
+      "errors": []
+    },
+    "snapshot": "assets/reviewed/rifle/ea3a84349288af0d_f846c4648df0cdb0"
+  }
+}
